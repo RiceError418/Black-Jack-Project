@@ -146,14 +146,16 @@ def play():
       player_hand.append(cards.pop(0))
       print("Here is your updated hand:", player_hand)
       player_point_count()
-      return
+      return True
       
     if hit_stand == ("S"):
-      return 
+      return False
 
   
   while player_points <= 20:
-    main()
+    keep_going = main()
+    if keep_going == False:
+      break
 
   #if player_points > 20:
   
